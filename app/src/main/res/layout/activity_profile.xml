@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
     tools:context=".ProfileActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TableRow
+        android:layout_width="289dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="50dp">
+
+        <ImageView
+            android:id="@+id/france"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flag_fr" />
+
+        <ImageView
+            android:id="@+id/egypt"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flag_eg" />
+
+        <ImageView
+            android:id="@+id/canada"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/flag_ca" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="383dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="50dp">
+
+        <ImageView
+            android:id="@+id/spain"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flag_sp" />
+
+        <ImageView
+            android:id="@+id/korea"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flag_kr" />
+
+        <ImageView
+            android:id="@+id/japan"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/flag_jp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="3dp">
+
+        <ImageView
+            android:id="@+id/turkey"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/flag_tr" />
+
+        <ImageView
+            android:id="@+id/greatBritain"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/flag_uk" />
+
+        <ImageView
+            android:id="@+id/unitedStates"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/flag_us" />
+    </TableRow>
+</TableLayout>
