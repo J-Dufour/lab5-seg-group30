@@ -10,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
         openMaps.setOnClickListener(view -> {
             // open google maps using and display address provided in teamAddress
+            if (!fieldsFilled()){
+                Toast.makeText(getApplicationContext(), "Empty Field", Toast.LENGTH_SHORT).show();
+            } else {
+                EditText teamAddress = (EditText) findViewById(R.id.teamAddress);
+                Uri gmmIntentUri = Uri.parse("https://maps.google.co.in/maps?q=" + teamAddress.getText());
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
         });
 
     }
@@ -80,5 +91,16 @@ public class MainActivity extends AppCompatActivity {
             int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
             flag.setImageResource(resID);
         }
+    }
+
+    public boolean fieldsFilled(){
+        EditText[] editTexts = {teamName, teamAddress};
+
+        for(EditText editText : editTexts){
+            if(editText.getText().toString().isEmpty()){
+                return false;
+            }
+        }
+        return true;
     }
 }
